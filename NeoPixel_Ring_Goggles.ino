@@ -7,7 +7,12 @@
 #endif
 
 // All the constants
-#define NEO_PIN 13
+#if defined (__AVR_ATtiny85__)
+  #define NEO_PIN 1
+#else
+  #define NEO_PIN 13
+#endif
+
 #define NUM_PIX 12
 #define DELAY = 500
 
@@ -36,7 +41,7 @@ void setup()
 }
 
 // MCU loop
-void loop() 
+void loop()
 {
   // TODO: Fill the body with combination of old a new code
 
@@ -88,3 +93,18 @@ void loop()
 //  }
 
 }
+
+// Rainbow effect on the rings
+void rainbow()
+{
+  // TODO: Add in the code for the rainbow  
+}
+
+// Random Sparks
+void randomSparks()
+{
+  //  TODO: Move the code here for the random sparks
+  
+}
+
+
