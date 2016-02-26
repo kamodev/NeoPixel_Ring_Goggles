@@ -14,16 +14,16 @@
 #endif
 
 #define NUM_PIX 12
-#define DELAY = 500
+#define SHORT_DELAY = 500
+#define LONG_DELAY = 80000
 
 // Start the libraries
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUM_PIX, NEO_PIN, NEO_GRB + NEO_KHZ800);
 
 // Part of the old code
-uint8_t  mode   = 0; // Current animation effect
+uint8_t mode = 0;
 uint8_t  offset = 0; // Position of spinny eyes
 uint32_t color  = 0xFF0000; // Start red
-uint32_t prevTime;
 
 // Setup for the bootstrap
 void setup() 
@@ -45,14 +45,24 @@ void loop()
 {
   // TODO: Fill the body with combination of old a new code
 
-//  uint8_t  i;
-//  uint32_t currTime;
+  
+  switch (mode) {
+    case 0;
+      // Random sparks - just one LED on at a time!
+      randomSparks();  
+      break;
 
-//  switch(mode) 
-//  {
-//
-//   case 0: // Random sparks - just one LED on at a time!
-// 
+    case 1:
+      // TODO: Next pattern
+      break;
+  }
+  
+
+  //  Wait 8 seconds
+  delay(8000);
+
+  //  Move to the next pattern
+    
 //   case 1: // Spinny wheels (8 LEDs on at a time)
 //    for(i=0; i<16; i++) 
 //    {
