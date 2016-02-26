@@ -52,12 +52,6 @@ void loop()
 //  {
 //
 //   case 0: // Random sparks - just one LED on at a time!
-//    i = random(32);
-//    pixels.setPixelColor(i, color);
-//    pixels.show();
-//    delay(10);
-//    pixels.setPixelColor(i, 0);
-//    break;
 // 
 //   case 1: // Spinny wheels (8 LEDs on at a time)
 //    for(i=0; i<16; i++) 
@@ -103,8 +97,13 @@ void rainbow()
 // Random Sparks
 void randomSparks()
 {
-  //  TODO: Move the code here for the random sparks
-  
+  rand_pin = random(32);
+  pixels.setPixelColor(rand_pin, color);
+  pixels.show();
+  delay(10);
+  pixels.setPixelColor(rand_pin, 0);  
 }
+
+// TODO: More of the patterns
 
 
