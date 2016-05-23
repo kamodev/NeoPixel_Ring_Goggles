@@ -7,7 +7,7 @@
 #endif
 
 // All the constants
-#if defined (__AVR_ATtiny85__)
+#if defined ( __AVR_ATtiny85__)
   #define NEO_PIN 1
 #else
   #define NEO_PIN 13
@@ -15,14 +15,14 @@
 
 #define NUM_PIX 12
 #define SHORT_DELAY = 500
-#define LONG_DELAY = 80000
+#define LONG_DELAY = 8000
 
 // Start the libraries
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUM_PIX, NEO_PIN, NEO_GRB + NEO_KHZ800);
 
 // Part of the old code
 uint8_t mode = 0;
-uint8_t  offset = 0; // Position of spinny eyes
+uint8_t offset = 0; // Position of spinny eyes
 uint32_t color  = 0xFF0000; // Start red
 
 // Setup for the bootstrap
@@ -101,12 +101,21 @@ void loop()
 // Rainbow effect on the rings
 void rainbow()
 {
-  // TODO: Add in the code for the rainbow  
+  // TODO: Add in the code for the rainbow
 }
 
 // Random Sparks
 void randomSparks()
 {
+  //  Colro loop for dertmining the color
+  for (c=0; c<3; c++) {
+
+    // Number of time to generate a spark for the googles
+    for () {
+
+      
+    }
+  }
   rand_pin = random(32);
   pixels.setPixelColor(rand_pin, color);
   pixels.show();
